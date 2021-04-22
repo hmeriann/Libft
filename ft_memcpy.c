@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/21 16:30:05 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/22 16:05:02 by hmeriann         ###   ########.fr       */
+/*   Created: 2021/04/22 16:06:12 by hmeriann          #+#    #+#             */
+/*   Updated: 2021/04/22 16:34:52 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-void				*ft_memset(void *s, int c, size_t n)
+void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	unsigned char	*tmp;
+	int i;
 
-	tmp = (unsigned char *)s;
-	while (n != 0)
+	i = 0;
+	while (i < n)
 	{
-		tmp[n - 1] = c;
-		n--;
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
 	}
-	return s;
+	return dst;
 }
 
-int					main(void)
-{
-	char			arr[];
-	
-	arr = "123456789";
-	printf("%s\n", ft_memset(arr, 'c', 4));
-	return 0;
-}
+// int					main(void)
+// {
+// 	unsigned int arr1[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+// 	unsigned int arr2[] = {7, 7, 7, 7};
+
+// 	printf("%s\n", ft_memcpy(arr1, arr2, 2));
+// 	return 0;
+// }
