@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmeriann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 15:14:19 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/19 15:15:26 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/04/23 13:34:02 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctype.h>
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 0x20 && c <= 0x7E)
 		return 1;

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmeriann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 10:56:32 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/02/09 14:23:27 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/04/23 13:34:02 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_atoi(char *str)
 {
-	int i;
+	int	i;
 	int j;
 	int number;
 

@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 20:41:20 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/23 15:18:36 by hmeriann         ###   ########.fr       */
+/*   Created: 2021/04/23 18:28:01 by hmeriann          #+#    #+#             */
+/*   Updated: 2021/04/23 18:54:47 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+#include <string.h>
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int i;
-	int sum1;
-	int sum2;
+	char	*tmp_s1;
+	char	*tmp_s2;
+	size_t	i;
 
+	tmp_s1 = (char *)s1;
+	tmp_s2 = (char *)s2;
 	i = 0;
-	sum1 = 0;
-	sum2 = 0;
-	while (s1[i] != '\0')
+	while (i < n || *tmp_s1 != '\0' || *tmp_s2 != '\0')
 	{
-		sum1 = sum1 + s1[i];
-		i++;
+		while (tmp_s1 == tmp_s2)
+			tmp_s1++, tmp_s2++;
+		if (tmp_s1[i] > tmp_s2[i])
+			return (1);
+		else
+			return (-1);
 	}
-
-	i = 0;
-	while (s2[i] != '\0')
-	{
-		sum2 = sum2 + s2[i];
-		i++;
-	}
-	return (unsigned int)(sum1 - sum2);
+	return (0);
 }

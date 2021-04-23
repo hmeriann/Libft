@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 20:41:20 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/23 15:18:36 by hmeriann         ###   ########.fr       */
+/*   Created: 2021/04/23 17:27:43 by hmeriann          #+#    #+#             */
+/*   Updated: 2021/04/23 17:55:36 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+#include <string.h>
+
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
-	int sum1;
-	int sum2;
+	const char	*tmp_s;
 
-	i = 0;
-	sum1 = 0;
-	sum2 = 0;
-	while (s1[i] != '\0')
+	tmp_s = (const char *)s;
+	if ((char)c == '\0')
+		{
+			while (*tmp_s != '\0')
+				tmp_s++;
+			return ((char *)s);
+		}
+	else
 	{
-		sum1 = sum1 + s1[i];
-		i++;
+		while (*tmp_s != '\0')
+			if (*tmp_s == (char)c)
+				return ((char *)s);
+			tmp_s++;
 	}
-
-	i = 0;
-	while (s2[i] != '\0')
-	{
-		sum2 = sum2 + s2[i];
-		i++;
-	}
-	return (unsigned int)(sum1 - sum2);
+	return (0);
 }

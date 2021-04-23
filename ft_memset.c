@@ -6,12 +6,12 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 16:30:05 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/22 16:05:02 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/04/23 13:34:02 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
+// #include <stdio.h>
 
 void				*ft_memset(void *s, int c, size_t n)
 {
@@ -26,11 +26,11 @@ void				*ft_memset(void *s, int c, size_t n)
 	return s;
 }
 
-int					main(void)
-{
-	char			arr[];
-	
-	arr = "123456789";
-	printf("%s\n", ft_memset(arr, 'c', 4));
-	return 0;
-}
+// int					main(void)
+// {
+// 	char			arr[];
+
+// 	arr = "123456789";
+// 	printf("%s\n", ft_memset(arr, 'c', 4));
+// 	return 0;
+// }

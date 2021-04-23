@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 20:41:20 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/23 15:18:36 by hmeriann         ###   ########.fr       */
+/*   Created: 2021/04/23 16:46:15 by hmeriann          #+#    #+#             */
+/*   Updated: 2021/04/23 16:59:36 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+#include <string.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int i;
-	int sum1;
-	int sum2;
+	unsigned const char	*tmp_s;
+	size_t				i;
 
+	tmp_s = (unsigned const char *)s;
 	i = 0;
-	sum1 = 0;
-	sum2 = 0;
-	while (s1[i] != '\0')
-	{
-		sum1 = sum1 + s1[i];
+	while ((i < n || tmp_s[i] != (unsigned char)c) && tmp_s[i] != '\0')
 		i++;
-	}
-
-	i = 0;
-	while (s2[i] != '\0')
-	{
-		sum2 = sum2 + s2[i];
-		i++;
-	}
-	return (unsigned int)(sum1 - sum2);
+	return ((unsigned char *)&s[i]);
 }

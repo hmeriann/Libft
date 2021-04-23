@@ -6,16 +6,16 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 16:06:12 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/22 16:34:52 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/04/23 13:34:02 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
+// #include <stdio.h>
 
-void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void		*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

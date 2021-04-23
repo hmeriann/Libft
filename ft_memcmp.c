@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 20:41:20 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/23 15:18:36 by hmeriann         ###   ########.fr       */
+/*   Created: 2021/04/23 17:06:32 by hmeriann          #+#    #+#             */
+/*   Updated: 2021/04/23 17:24:44 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+#include <string.h>
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
-	int sum1;
-	int sum2;
+	unsigned const char	*tmp_s1;
+	unsigned const char	*tmp_s2;
 
-	i = 0;
-	sum1 = 0;
-	sum2 = 0;
-	while (s1[i] != '\0')
-	{
-		sum1 = sum1 + s1[i];
-		i++;
-	}
-
-	i = 0;
-	while (s2[i] != '\0')
-	{
-		sum2 = sum2 + s2[i];
-		i++;
-	}
-	return (unsigned int)(sum1 - sum2);
+	tmp_s1 = (unsigned char *)s1;
+	tmp_s2 = (unsigned char *)s2;
+	while (n-- > 0 && *tmp_s1 == *tmp_s2)
+		tmp_s1++, tmp_s2++;
+	return (*tmp_s1 - *tmp_s2);
 }
