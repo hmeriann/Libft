@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/26 15:44:53 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/26 16:01:20 by hmeriann         ###   ########.fr       */
+/*   Created: 2021/04/26 15:44:29 by hmeriann          #+#    #+#             */
+/*   Updated: 2021/04/26 16:01:54 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	size_t	src_len;
+	size_t	i;
+	size_t	j;
 
-	src_len = strlen(src);
-	if (src_len + 1 < dstsize)
-		memcpy(dst, src, src_len + 1);
-	else if (dstsize != 0)
+	i = strlen(dst);
+	j = 0;
+	while ((i + 1) < (dstsize - 1) && src[j])
 	{
-		memcpy(dst, src, dstsize - 1);
-		dst[dstsize - 1] = '\0';
+		dst[i + j] = src[j];
+		j++;
 	}
-	return (src_len);
+	dst[i + j] = '\0';
+	return (strlen(src) + dstsize);
 }
