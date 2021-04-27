@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 16:04:50 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/26 19:10:07 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/04/27 14:11:25 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@
  * the first occurrence of needle is returned.
 **/
 
-#include <string.h>
+#include "libft.h"
+
 static int	isThereNeedle(const char *haystack, const char *needle, size_t len);
 static int	indexOfTheFirstCharInHay(const char *haystack, const char *needle, \
 									size_t len);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (needle == NULL || *needle == '\0' || len == 0)
+	if (*needle == NULL || *needle == '\0')
 		return ((char *)haystack);
 	else if (!&isThereNeedle || &ndexOfTheFirstCharInHay == 0)
 		return (NULL);

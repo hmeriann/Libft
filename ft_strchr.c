@@ -6,11 +6,11 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 17:27:43 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/23 17:55:36 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/04/27 14:11:25 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

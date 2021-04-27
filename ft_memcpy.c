@@ -6,14 +6,13 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 16:06:12 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/23 13:34:02 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/04/27 14:17:19 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-// #include <stdio.h>
+#include "libft.h"
 
-void		*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
 	size_t	i;
 
@@ -23,14 +22,5 @@ void		*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
-	return dst;
+	return (dst);
 }
-
-// int					main(void)
-// {
-// 	unsigned int arr1[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
-// 	unsigned int arr2[] = {7, 7, 7, 7};
-
-// 	printf("%s\n", ft_memcpy(arr1, arr2, 2));
-// 	return 0;
-// }

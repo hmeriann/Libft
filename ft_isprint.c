@@ -6,16 +6,16 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 15:14:19 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/23 13:34:02 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/04/27 14:10:17 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
 	if (c >= 0x20 && c <= 0x7E)
-		return 1;
+		return (1);
 	else
-		return 0;
+		return (0);
 }

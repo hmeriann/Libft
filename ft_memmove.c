@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 13:34:37 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/23 16:45:30 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/04/27 16:03:07 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * in a non-destructive manner.
  **/
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
