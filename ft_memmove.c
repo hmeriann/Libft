@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 13:34:37 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/27 16:03:07 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/04/27 18:00:31 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
  **/
 
 #include "libft.h"
+#include <string.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -26,9 +27,20 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	tmp_dst = (char *)dst;
 	tmp_src = (char *)src;
-	if ((char *)tmp_src == (char *)tmp_dst)
+	if (tmp_src == tmp_dst)
 		return ((char *)dst);
+	if (tmp_src == 0 || tmp_dst == 0)
+		return (0);
 	else if (tmp_src < tmp_dst)
+	{
+		i = 0;
+		while (i < len)
+		{
+			tmp_dst[len - i] = tmp_src[i];
+			i++;
+		}
+	}
+	else
 	{
 		i = 0;
 		while (i < len)
@@ -37,14 +49,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			i++;
 		}
 	}
-	else
-	{
-		i = len;
-		while (i > 0)
-		{
-			tmp_dst[i] = tmp_src[i];
-			i--;
-		}
-	}
 	return ((char *)dst);
+}
+
+int	main(void)
+{
+	char	*str;
+	str = "Hello";
+	ft_memmove(str, str + 1, 5);
+
+	return (0);
 }
