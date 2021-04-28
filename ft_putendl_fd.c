@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 10:56:32 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/28 18:00:28 by hmeriann         ###   ########.fr       */
+/*   Created: 2021/04/28 13:54:59 by hmeriann          #+#    #+#             */
+/*   Updated: 2021/04/28 14:21:24 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
-	int	minusCounter;
-	int	res;
-
-	i = 0;
-	minusCounter = 0;
-	res = 0;
-	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			minusCounter++;
-		i++;
-	}
-	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
-	{
-		res = 10 * res + (str[i] - '0');
-		i++;
-	}
-	if (minusCounter % 2 == 1)
-		res = -res;
-	return (res);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
