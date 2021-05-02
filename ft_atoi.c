@@ -17,7 +17,7 @@ int		ft_atoi(const char *str)
 	int	i;
 	int	minusCounter;
 	int	res;
-
+// нужно добавить проверки на мин и макс инт
 	i = 0;
 	minusCounter = 0;
 	res = 0;
