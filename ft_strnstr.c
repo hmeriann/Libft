@@ -19,68 +19,54 @@
 **/
 
 #include "libft.h"
-
-static int	isThereNeedle(const char *haystack, const char *needle, size_t len);
-static int	indexOfTheFirstCharInHay(const char *haystack, const char *needle, \
-									size_t len);
+// #include <stdio.h>
+// #include <string.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (*needle == NULL || *needle == '\0')
-		return ((char *)haystack);
-	else if (!&isThereNeedle || &ndexOfTheFirstCharInHay == 0)
+	size_t	needle_len;
+	size_t	hay_len;
+	size_t	i;
+	size_t	j;
+	size_t	min_len;
+
+	hay_len = ft_strlen(haystack);
+	// printf("%zu\n", hay_len);
+	needle_len = ft_strlen(needle);
+	// printf("%zu\n", needle_len);
+	min_len = len;
+	if (hay_len < len)
+		min_len = hay_len;
+	// printf("%zu\n", min_len); //сначала найти максимальную длину области поиска
+	if (needle_len > min_len)
 		return (NULL);
-	else
-		return (*haystack[indexOfTheFirstCharInHay]);
-}
-
-static int	isThereNeedle(const char *haystack, const char *needle, size_t len)
-{
-	int	i;
-	int	j;
-	int	isStringPresented;
-
+	if (*needle == '\0')
+		return ((char *)haystack);
 	i = 0;
-	j = 0;
-	isStringPresented = 0;
-	while (*haystack != '\0' && (size_t)i <= len)
+	while (i <= min_len - needle_len)
 	{
-		while (*needle != '\0')
+		// printf("i = %zu\n", i);
+		j = 0;
+		while (haystack[i + j] == needle[j] && j < len) //i - значение, которое закрепили в большой строке, j - двигаем, чтобы соответствовать индексу в мелкой строке
 		{
-			if (*(char)needle[j] == *(char)haystack[i])
-			{
-				i++, j++, isStringPresented = 1;
-			}
-			else
-				i++, j = 0, isStringPresented = 0;
+			// printf("i = %zu, j = %zu, %c, %c\n", i, j, haystack[i + j], needle[j]);
+			j++;
+			if (j == needle_len) //значит, мы все сравнили удачно и вывалились за край нидла, то есть прошли весь кусок мелкой строки
+				return ((char *)haystack + i);
 		}
-		return (isStringPresented);
+		i++;
 	}
+	return (NULL);
 }
 
-static int	indexOfTheFirstCharInHay(const char *haystack, const char *needle, \
-									size_t len)
-{
-	int	i;
-	int	j;
-	int	isStringPresented;
+// int	main(void)
+// {
+// 	char *s1 = "abcd";
+// 	char *s2 = "cd";
+// 	size_t max = 4;
 
-	i = 0;
-	j = 0;
-	isStringPresented = 0;
-	while (*haystack != '\0' && (size_t)i <= len)
-	{
-		while (*needle != '\0')
-		{
-			if (*(char)needle[j] == *(char)haystack[i])
-			{
-				i++, j++, isStringPresented = 1;
-			}
-			else
-				i++, j = 0, isStringPresented = 0;
-		}
-		if (isStringPresented == 1)
-			return (i - j);
-		return (-1);
-	}
-}
+// 	char *i1 = strnstr(s1, s2, max);
+// 	char *i2 = ft_strnstr(s1, s2, max);
+
+// 	printf("%s\n %s", i1, i2);
+// }
