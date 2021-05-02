@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 16:47:53 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/27 14:11:25 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/04/29 12:51:46 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,9 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		((unsigned char *)tmp_dst)[i] = ((unsigned char *)tmp_src)[i];
-		if (tmp_src[i] == (unsigned char)c)
+		if ((unsigned char)tmp_src[i] == (unsigned char)c)
 			return (dst + i + 1);
 		i++;
 	}
 	return (0);
 }
-
-// int main (void)
-// {
-//    // Массив источник данных
-//    unsigned char src[15]= "123456789";
-
-//    // Массив приемник данных
-//    unsigned char dst[15]="";
-
-//    // Копируем данные из массива src в массив dst
-//    memccpy (dst, src,'7', 10);
-
-//    // Вывод массива dst на консоль
-//    printf ("dst: %s\n",dst);
-
-//    return 0;
-// }
