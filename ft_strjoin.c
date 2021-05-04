@@ -22,16 +22,13 @@ char *ft_strjoin(char const *s1, char const *s2)
         total[i] = begin[i];
         i++;
     }
-    printf("%s\n", total);
     j = 0;
     while (end[j] != '\0')
     {
         total[i + j] = end[j];
         j++;
     }
-        printf("%s\n", total);
     total[i + j] = '\0';
-        printf("%s\n", total);
     return (total);
 }
 
