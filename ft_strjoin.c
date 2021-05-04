@@ -11,6 +11,8 @@ char *ft_strjoin(char const *s1, char const *s2)
 
     begin = (char *)s1;
     end = (char *)s2;
+    if ((char *)s1 == NULL || (char *)s2 == NULL)
+        return (NULL);
     total = (char *)malloc((strlen(s1) + strlen(s2) + 1) * sizeof(char));
     if (total == NULL)
         return (NULL);
