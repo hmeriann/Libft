@@ -1,41 +1,35 @@
 # include "libft.h"
 
-static int     firstIndexOfCharInString(char const *set, char c);
+static int  firstIndexOfCharInString(char const *set, char c);
+static int  left_bound_finder(char const *s1, char const *set, int left);
+static int  right_bound_finder(char const *s1, char const *set, int right);
 
-char    *ft_strtrim(char const *s1, char const *set)
+char        *ft_strtrim(char const *s1, char const *set)
 {
     char    *result;
-    int     len_s;
-    int     l;// index of the first char in srting wich is not found in the set
-    int     r;
-    int     i;
+    int     len_substr;
+    int     left;/** index of the first char in srting wich is not found in the set*/
+    int     right;
 
     if (s1 == NULL || set == NULL)
         return (NULL);
-    l = 0; 
-    while (s1[l] != '\0' && firstIndexOfCharInString(set, s1[l]) != -1)
-        l++;
-    r = ft_strlen(s1) - 1;
-    while (r > 0 && firstIndexOfCharInString(set, s1[r]) != -1)
-        r--;
-    if (l > r)
-        return ("");
-    len_s = r - l + 1;
-    result = malloc(sizeof(char) * (len_s + 1));
+    if (*set == '\0')
+        return (result = ft_strdup(s1));
+    left = 0;
+    right = 0;
+    left = left_bound_finder(s1, set, left);
+    right = right_bound_finder(s1, set, right);
+    if (left > right)
+        return (ft_strdup(""));
+    len_substr = right - left + 1;
+    result = malloc(sizeof(char) * (len_substr + 1));
     if (result == NULL)
         return (NULL);
-    /** переносим в результат по одному символу, начиная с индекса l**/
-    i = 0;
-    while (i < len_s)
-    {
-        result[i] = s1[l + i];
-        i++;
-    }
-    result[i] = '\0';
+    result = ft_substr(s1, left, len_substr);
     return (result);
 }
 
-//возвращает индекс символа в строке
+/**возвращает индекс символа в строке*/
 static int     firstIndexOfCharInString(char const *set, char c)
 {
     int i;
@@ -48,4 +42,20 @@ static int     firstIndexOfCharInString(char const *set, char c)
         i++;
     }
     return (-1);
+}
+
+static int      left_bound_finder(char const *s1, char const *set, int left)
+{
+    left = 0; 
+    while (s1[left] != '\0' && firstIndexOfCharInString(set, s1[left]) != -1)
+        left++;
+    return (left);
+}
+
+static int      right_bound_finder(char const *s1, char const *set, int right)
+{
+    right = ft_strlen(s1) - 1;
+    while (right > 0 && firstIndexOfCharInString(set, s1[right]) != -1)
+        right--;
+    return (right);
 }
