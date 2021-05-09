@@ -6,10 +6,11 @@ int ft_lstsize(t_list *lst)
 	int counter;
 	t_list *tmp;
 
+	counter = 0;
 	if (lst == NULL)
-		return (NULL);
+		return (0);
 	tmp = lst;
-	while (tmp -> next != NULL)
+	while (tmp != NULL)
 	{
 		tmp = tmp -> next;
 		counter++;
