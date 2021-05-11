@@ -18,8 +18,6 @@ char	*ft_strchr(const char *s, int c)
 	const char	*ptr;
 
 	ptr = s;
-	if (s == NULL)
-		return (NULL);
 	while (1)
 	{
 		if (*ptr == (unsigned char)c)
