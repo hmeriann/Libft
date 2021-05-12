@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 16:06:12 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/27 14:17:19 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 16:41:54 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	i = 0;
 	if (!n || dst == src)
-        return (dst);
+		return (dst);
 	while (i < (unsigned char)n)
 	{
 		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];

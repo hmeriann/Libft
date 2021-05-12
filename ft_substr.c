@@ -6,15 +6,22 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 15:05:22 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/05/02 20:50:54 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 17:17:52 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_min(int x, int y)
+{
+	if (x < y)
+		return (x);
+	return (y);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*tmp;	
+	char	*tmp;
 	size_t	return_len;
 	size_t	s_len;
 
@@ -30,12 +37,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(tmp, s + start, return_len + 1);
 	return (tmp);
 }
-
-// int main (void)
-// {
-// 	char *str = "i just want this part #############";
-// 	size_t size = 22;
-// 	char *ret = ft_substr(str, 0, size);
-
-// 	printf("%s\n", ret);
-// }

@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 15:14:19 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/27 14:10:17 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 17:12:38 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
-		return 1;
+		return (1);
 	else
 		return (0);
 }

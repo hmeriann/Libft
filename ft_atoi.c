@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 10:56:32 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/28 18:00:28 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 17:12:21 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_atoi(const char *str)
 	int	i;
 	int	minusCounter;
 	int	res;
-// нужно добавить проверки на мин и макс инт
+
 	i = 0;
 	minusCounter = 0;
 	res = 0;

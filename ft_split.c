@@ -1,10 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/12 17:19:20 by hmeriann          #+#    #+#             */
+/*   Updated: 2021/05/12 17:19:46 by hmeriann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "libft.h"
-# include <stdio.h>
-
-static char		**array_free(char **res_array);
-static size_t	words_counter(const char *s, size_t l, char c);
-static	void	action_with_str(const char *s, char **res_array, char c);
-
 
 static char **array_free(char **res_array)
 {
@@ -33,12 +39,12 @@ static size_t  words_counter(const char *s, size_t l, char c)
 	{
 		if (s[l] == c)
 			state = 0;
-		else if (state == 0) 
+		else if (state == 0)
 			{
 				state = 1;
 				words_count++;
 			}
-		l++; 
+		l++;
 	}
 	return (words_count);
 }
@@ -81,10 +87,10 @@ char    **ft_split(char const *s, char c)
 	size_t left;
 	size_t words_count;
 	char **res_array;
-	
+
 	if (s == NULL)
 		return (NULL);
-	left = 0; 
+	left = 0;
 	words_count = words_counter(s, left, c);
 	res_array = (char **)malloc((words_count + 1) * sizeof(char *));
 	if (res_array == NULL)
@@ -92,16 +98,3 @@ char    **ft_split(char const *s, char c)
 	action_with_str(s, res_array, c);
 	return (res_array);
 }
-
-
-// int main(void)
-// {
-// 	char *string = "split ";
-//     char c = ' ';
-//     char ** result;
-	
-//     result = ft_split(string, c);
-//     for (int i = 0; i < 5; i++)
-//         printf("in main = %s\n", result[i]);
-//     return (0);
-// }
