@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 17:16:42 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/05/12 19:08:48 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 23:28:49 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	end = (char *)s2;
 	if ((char *)s1 == NULL || (char *)s2 == NULL)
 		return (NULL);
-	total = (char *)malloc((strlen(s1) + strlen(s2) + 1) * sizeof(char));
+	total = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (total == NULL)
 		return (NULL);
 	join(total, begin, end);

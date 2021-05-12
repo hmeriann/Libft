@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 17:19:20 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/05/12 19:44:18 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 21:44:14 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,13 @@ static size_t	words_counter(const char *s, size_t l, char c)
 	return (words_count);
 }
 
-static void	action_with_str(const char *s, char **res_array, char c)
+static void	action_with_str(const char *s, char **res_array, char c, \
+							size_t right)
 {
 	size_t	left;
-	size_t	right;
 	size_t	line_num;
 
 	line_num = 0;
-	right = 0;
 	left = 0;
 	while (s[right] != '\0')
 	{
@@ -71,10 +70,7 @@ static void	action_with_str(const char *s, char **res_array, char c)
 		{
 			res_array[line_num] = ft_substr(s, right - left, left);
 			if (res_array[line_num] == NULL)
-			{
 				array_free(res_array);
-				return ;
-			}
 			line_num++;
 			left = 0;
 		}
@@ -84,6 +80,7 @@ static void	action_with_str(const char *s, char **res_array, char c)
 
 char	**ft_split(char const *s, char c)
 {
+	size_t	right;
 	size_t	left;
 	size_t	words_count;
 	char	**res_array;
@@ -95,6 +92,7 @@ char	**ft_split(char const *s, char c)
 	res_array = (char **)malloc((words_count + 1) * sizeof(char *));
 	if (res_array == NULL)
 		return (NULL);
-	action_with_str(s, res_array, c);
+	right = 0;
+	action_with_str(s, res_array, c, right);
 	return (res_array);
 }
