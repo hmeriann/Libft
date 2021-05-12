@@ -6,28 +6,19 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 17:16:42 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/05/12 17:17:04 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 19:08:48 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+static void	join(char *total, char *begin, char *end)
 {
-	char	*begin;
-	char	*end;
-	char	*total;
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
-	begin = (char *)s1;
-	end = (char *)s2;
-	if ((char *)s1 == NULL || (char *)s2 == NULL)
-		return (NULL);
-	total = (char *)malloc((strlen(s1) + strlen(s2) + 1) * sizeof(char));
-	if (total == NULL)
-		return (NULL);
 	i = 0;
+	j = 0;
 	while (begin[i] != '\0')
 	{
 		total[i] = begin[i];
@@ -40,5 +31,21 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	total[i + j] = '\0';
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*begin;
+	char	*end;
+	char	*total;
+
+	begin = (char *)s1;
+	end = (char *)s2;
+	if ((char *)s1 == NULL || (char *)s2 == NULL)
+		return (NULL);
+	total = (char *)malloc((strlen(s1) + strlen(s2) + 1) * sizeof(char));
+	if (total == NULL)
+		return (NULL);
+	join(total, begin, end);
 	return (total);
 }
