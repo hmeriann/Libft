@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 14:00:35 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/04/27 14:11:25 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 18:44:03 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (s)
 	{
-		while (s[i] != '\0') 
+		while (s[i] != '\0')
 		{
 			write(fd, &s[i], 1);
-				i++;
+			i++;
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 17:48:01 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/05/01 15:51:35 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 20:06:51 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (*tmp == (unsigned char)c)
 			return ((char *)tmp);
+		if (tmp == s)
+			return (NULL);
 	}
 	return (NULL);
 }

@@ -6,15 +6,15 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 17:19:20 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/05/12 17:19:46 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 19:44:18 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-static char **array_free(char **res_array)
+static char	**array_free(char **res_array)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (res_array[i])
@@ -28,10 +28,10 @@ static char **array_free(char **res_array)
 	return (NULL);
 }
 
-static size_t  words_counter(const char *s, size_t l, char c)
+static size_t	words_counter(const char *s, size_t l, char c)
 {
-	size_t words_count;
-	int state;
+	size_t	words_count;
+	int		state;
 
 	words_count = 0;
 	state = 0;
@@ -40,10 +40,10 @@ static size_t  words_counter(const char *s, size_t l, char c)
 		if (s[l] == c)
 			state = 0;
 		else if (state == 0)
-			{
-				state = 1;
-				words_count++;
-			}
+		{
+			state = 1;
+			words_count++;
+		}
 		l++;
 	}
 	return (words_count);
@@ -51,9 +51,9 @@ static size_t  words_counter(const char *s, size_t l, char c)
 
 static void	action_with_str(const char *s, char **res_array, char c)
 {
-	size_t left;
-	size_t right;
-	size_t line_num;
+	size_t	left;
+	size_t	right;
+	size_t	line_num;
 
 	line_num = 0;
 	right = 0;
@@ -82,11 +82,11 @@ static void	action_with_str(const char *s, char **res_array, char c)
 	res_array[line_num] = NULL;
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	size_t left;
-	size_t words_count;
-	char **res_array;
+	size_t	left;
+	size_t	words_count;
+	char	**res_array;
 
 	if (s == NULL)
 		return (NULL);

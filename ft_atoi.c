@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 10:56:32 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/05/12 19:47:07 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 19:59:28 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ static int	max_min_handling(long long res, int sign)
 	return (1);
 }
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
+	int			i;
+	int			sign;
 	long long	res;
 
 	i = 0;

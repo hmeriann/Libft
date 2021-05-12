@@ -6,7 +6,7 @@
 /*   By: hmeriann <hmeriann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 17:18:21 by hmeriann          #+#    #+#             */
-/*   Updated: 2021/05/12 17:18:22 by hmeriann         ###   ########.fr       */
+/*   Updated: 2021/05/12 18:29:48 by hmeriann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list	*last;
+	t_list	*last;
 
 	if (new == NULL)
 		return ;
