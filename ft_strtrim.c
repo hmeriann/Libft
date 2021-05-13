@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	firstIndexOfCharInString(char const *set, char c)
+static int	first_index(char const *set, char c)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ static int	firstIndexOfCharInString(char const *set, char c)
 static int	left_bound_finder(char const *s1, char const *set, int left)
 {
 	left = 0;
-	while (s1[left] != '\0' && firstIndexOfCharInString(set, s1[left]) != -1)
+	while (s1[left] != '\0' && first_index(set, s1[left]) != -1)
 		left++;
 	return (left);
 }
@@ -37,7 +37,7 @@ static int	left_bound_finder(char const *s1, char const *set, int left)
 static int	right_bound_finder(char const *s1, char const *set, int right)
 {
 	right = ft_strlen(s1) - 1;
-	while (right > 0 && firstIndexOfCharInString(set, s1[right]) != -1)
+	while (right > 0 && first_index(set, s1[right]) != -1)
 		right--;
 	return (right);
 }
